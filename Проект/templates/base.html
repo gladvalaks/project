@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,
+                    initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+
+    <title>{{title}}</title>
+</head>
+<body>
+<header>
+    <span class="border" >
+    <nav class="navbar navbar-expand-lg navbar-light bg-info ">
+        <a class="navbar-brand" href="/memewiki">MemePedia</a>
+        <a class="navbar-brand" href="/index">MemeOtvet</a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item dropdown">
+
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/questions/1/1">Всё подряд</a>
+                        <a class="dropdown-item" href="/questions/2/1">Политика</a>
+                        <a class="dropdown-item" href="/questions/3/1">Животные</a>
+                        <a class="dropdown-item" href="/questions/4/1">Игры</a>
+                        <a class="dropdown-item" href="/questions/5/1">Русские</a>
+                        <a class="dropdown-item" href="/questions/6/1">18+</a>
+                        <a class="dropdown-item" href="/questions/7/1">Аниме</a>
+                        <a class="dropdown-item" href="/questions/8/1">Ностальгия</a>
+                        <a class="dropdown-item" href="/questions/9/1">Техно-научные</a>
+                        <a class="dropdown-item" href="/questions/10/1">АнтиK-pop</a>
+                        <a class="dropdown-item" href="/questions/11/1">Другие</a>
+                    </div>
+                </li>
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Категории
+                </a>
+                <li class="nav-item">
+                    <a class="nav-link" href="/leaders">Лидеры</a>
+                </li>
+
+
+                {% if "username" in session %}
+                <a class="navbar-brand" href="/add_question">Задать вопрос</a>
+                {% endif %}
+
+            </ul>
+
+            <ul class="nav justify-content-end">
+                {% if not "username" in session %}
+                <li class="nav-item">
+
+                    <a class="nav-link bg-light text-dark" href="/login">Войти</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link bg-light text-dark" href="/register">Регистрация</a>
+                </li>
+                {% else %}
+                <a class="navbar-brand" href="/profile">{{session['username']}}</a>
+                <a class="navbar-brand" href="/logout">Выйти</a>
+                {% endif %}
+            </ul>
+        </div>
+
+
+    </nav>
+    </span>
+</header>
+
+<!-- Begin page content -->
+{% block content %}{% endblock %}
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+<footer class="pt-4 my-md-5 pt-md-5 border-top">
+    <div class="row">
+        <div class="col-12 col-md">
+            <img class="mb-2" src="https://pp.userapi.com/c851016/v851016027/9e491/qKqwxN08oGk.jpg?ava=1" alt=""
+                 width="24" height="24">
+            <h5>Borrow entertainment</h5>
+            <small class="d-block mb-3 text-muted">© 2019</small>
+        </div>
+        <div class="col-6 col-md">
+            <h5>
+                <ul class="list-unstyled text-small">
+                    <li><a class="text-muted" href="/regulation">Правила</a></li>
+
+                </ul>
+            </h5>
+        </div>
+        <div class="col-6 col-md">
+            <h5>
+                <ul class="list-unstyled text-small">
+                    <li><a class="text-muted" href="/infocompany">О компании</a></li>
+                </ul>
+            </h5>
+        </div>
+        <div class="col-6 col-md">
+            <h5>
+                <ul class="list-unstyled text-small">
+                    <li><a class="text-muted" href="/help">Помощь</a></li>
+                </ul>
+            </h5>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
